@@ -11,6 +11,6 @@ test('adds 1 + 2 to equal 3 using sum function', () => {
 });
 
 //instentional failing test 
-test('adds 1 + 2 to equal 3 using sum function', () => {
-  expect(sum(1, 2)).toBe(4); // This will fail
-});
+//test('adds 1 + 2 to equal 3 using sum function', () => {
+  //expect(sum(1, 2)).toBe(4); // This will fail
+//});
