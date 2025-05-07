@@ -11,6 +11,3 @@ test('adds 1 + 2 to equal 3 using sum function', () => {
 });
 
 
-test('adds 1 + 2 to equal 3 using sum function', () => {
-  expect(sum(1, 2)).toBe(3); // This will fail
-});
