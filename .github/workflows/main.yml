@@ -1,19 +1,24 @@
-name: Unit Tests # name of the test
+name: Unit Tests
 
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+on: [push, pull_request]
 
 jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+
       - name: Install Dependencies
-        run: npm install
-      - name: Unit Test
+        run: npm install --no-optional
+
+      - name: Run Unit Tests
         run: npm test ./__tests__/sum.test.js
+
+      - name: Run Unit Tests for unit.test.js
+        run: npm test ./__tests__/unit.test.js
